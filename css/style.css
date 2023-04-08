@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  box-sizing: border-box;
+}
+.carousel-inner,
+.carousel-item{
+  height: 100vh;
+}
+
+.carousel-item {
+  background-image: url('../image/background12.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.btn-hover{transition: all .3s;}
+.btn-hover:hover{
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.layout{
+  background-color: rgba(0, 0, 0, 0.6)
+}
+footer{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* ===================================================================== */
+*{
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  box-sizing: border-box;
+}
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled{
+  background-color: #cbbcb1;
+  
+}
+
+.mask-custom {
+  background-color: rgba(255, 255, 255, .15);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+
+#intro{
+  background-image: url('../image/hero3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  border-bottom-right-radius: 30%;
+}
+.layer{
+  background-color: rgba(0, 0, 0,0.3);
+}
+.card img{
+  height: 12rem;
+}
