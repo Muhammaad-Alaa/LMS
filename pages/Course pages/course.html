@@ -28,9 +28,9 @@
       <div
         class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
       >
-        <a class="navbar-brand brand-logo mr-5" href="index.html"
+        <a class="navbar-brand brand-logo mr-5" href="../../index.html"
           >Al_Azher</a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"
+        <a class="navbar-brand brand-logo-mini" href="../../index.html"
           ><img src="../../image/logo.jpg" class="mr-2" alt="logo"
           /></a>
       </div>
@@ -301,27 +301,27 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/index.html">
+            <a class="nav-link" href="index.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">All courses</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./add.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Add course</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./list.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">list of courses</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="../pearson/add.html">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Add pearsone</span>
+              <span class="menu-title">Add User</span>
             </a>
           </li>
         </ul>
@@ -333,8 +333,8 @@
             <div Class="gy-md-0">
               <div Class="text-md-start">
                 <div Class="text-lg-left text-md-center text-sm-center">
-                  <h3 Class="display-3 fw-bolder">courseName</h3>
-                  <span
+                  <h3 Class="display-3 fw-bolder mb-4 p-3">courseName</h3>
+                  <!-- <span
                     Class="w-25 mx-auto ms-md-0 mb-2 d-inline-block bg-dark"
                     style="height: 2px"
                   ></span>
@@ -342,19 +342,17 @@
                   <span
                     Class="mx-auto w-50 ms-md-0 mb-4 d-inline-block bg-dark"
                     style="height: 2px"
-                  ></span>
+                  ></span> -->
                 </div>
-                <div Class="mb-3">
+                <!-- <div Class="mb-3">
                     <button variant="success"> Add content</button>
                     <button variant="secondary"> Add Assginment</button>
-                    <button>
-                        Add Exame
-                      
-                    </button>
+                    
                 </div>
                 <div Class="row">
-                
-                  <div Class="col-12 mb-3">
+
+    
+                   <div Class="col-12 mb-3">
                       <div class="card">
                         <h4 class="card-header">lecture : 1</h4>
                         <div class="card-body">
@@ -397,158 +395,59 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div Class="col-12 mb-3">
-                      <div class="card">
-                        <h4 class="card-header">lecture : 2</h4>
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <a href="#"> chapter:1</a>
-                          </h5>
-                          <p class="card-text">
-                            <h6>Assginment :1</h6>
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                          <div class="row w-50 justify-content-center align-items-center">
-                            <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
-                              <a href="#" class="btn btn-primary ">
-                                <i
-                                  class="fa fa-download me-2"
-                                  aria-hidden="true"
-                                ></i>
-                                download
-                              </a>
-                            </div>
-                            <div class="col-sm-12  col-md-6 col-lg-6 mb-2">
-                              <form class="btn btn-primary d-flex justify-content-around align-items-center">
-                                <label for="upload" class="mb-0">
-                                  <i
-                                    class="fa fa-upload me-2"
-                                    aria-hidden="true"
-                                  ></i>
-                                  upload
-                                </label>
-                                <input
-                                  type="file"
-                                  class="form-control-file"
-                                  hidden
-                                  id="upload"
-                                />
-                              </form>
-                            </div>
-                          </div>
+                    </div>  -->
+                   
+                  <div class="row">
+                    <div class="col-12">
+                      <div id="content-section">
+                       
+                      <div class="mb-3">
+                        <button type="button" class="btn btn-primary" id="add-content-btn">Add Content</button>
+                        <button type="button" class="btn btn-primary" id="add-assignment-btn">Add Assignment</button>
+                      </div>
+                        <div id="content-form" style="display: none;">
+                          <input  class="form-control mb-2" type="text" id="content-name" placeholder="Content Name">
+                          <input  class="form-control mb-2" type="file" id="content-file" multiple>
+                          <button type="button" class="btn btn-success" id="submit-content-btn">Add</button>
+                        </div>
+                        <div id="assignment-form" style="display: none;">
+                          <input class="form-control mb-2" type="file" id="assignment-file">
+                          <button type="button" class="btn btn-success" id="submit-assignment-btn">Add</button>
+                        </div>
+                        <div  id="content-list">
+                          <!-- Content and assignments will be dynamically added here -->
+                          
                         </div>
                       </div>
                     </div>
-                    <div Class="col-12 mb-3">
-                      <div class="card">
-                        <h4 class="card-header">lecture : 3</h4>
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <a href="#"> chapter :2</a>
-                          </h5>
-                          <p class="card-text">
-                            <h6>Assginment :1</h6>
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                          <div class="row w-50 justify-content-center align-items-center">
-                            <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
-                              <a href="#" class="btn btn-primary ">
-                                <i
-                                  class="fa fa-download me-2"
-                                  aria-hidden="true"
-                                ></i>
-                                download
-                              </a>
-                            </div>
-                            <div class="col-sm-12  col-md-6 col-lg-6 mb-2">
-                              <form class="btn btn-primary d-flex justify-content-around align-items-center">
-                                <label for="upload" class="mb-0">
-                                  <i
-                                    class="fa fa-upload me-2"
-                                    aria-hidden="true"
-                                  ></i>
-                                  upload
-                                </label>
-                                <input
-                                  type="file"
-                                  class="form-control-file"
-                                  hidden
-                                  id="upload"
-                                />
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div Class="col-12 mb-3"> 
-                      <div class="card">
-                        <h4 class="card-header">lecture : 4</h4>
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <a href="#"> chapter : 3</a>
-                          </h5>
-                          <p class="card-text">
-                            <h6>Assginment :1</h6>
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                          <div class="row w-50 justify-content-center align-items-center">
-                            <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
-                              <a href="#" class="btn btn-primary ">
-                                <i
-                                  class="fa fa-download me-2"
-                                  aria-hidden="true"
-                                ></i>
-                                download
-                              </a>
-                            </div>
-                            <div class="col-sm-12  col-md-6 col-lg-6 mb-2">
-                              <form class="btn btn-primary d-flex justify-content-around align-items-center">
-                                <label for="upload" class="mb-0">
-                                  <i
-                                    class="fa fa-upload me-2"
-                                    aria-hidden="true"
-                                  ></i>
-                                  upload
-                                </label>
-                                <input
-                                  type="file"
-                                  class="form-control-file"
-                                  hidden
-                                  id="upload"
-                                />
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
+                  </div>
+                    
+                    
+                    
+                  <!--  -->
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <footer class="footer text-center">
+          </section>
+          <footer class="footer text-center">
             
-          <div>
-           <span class="text-muted  d-block ">Al Azhar University </span>
-           <span class=" d-block mt-1 mt-sm-0">Faculty of Engineering, Department of Systems and Computers</span>
-      
-         </div> 
-      
+            <div>
+             <span class="text-muted  d-block ">Al Azhar University </span>
+             <span class=" d-block mt-1 mt-sm-0">Faculty of Engineering, Department of Systems and Computers</span>
+        
+           </div> 
+        
+         
+       </footer>
+          </div>
        
-     </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+  <script src="./course.js"></script>
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>

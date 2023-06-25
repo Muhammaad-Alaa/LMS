@@ -28,7 +28,7 @@
       <div
         class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
       >
-        <a class="navbar-brand brand-logo mr-5" href="index.html"
+        <a class="navbar-brand brand-logo mr-5" href="../../index.html"
           >Al_Azher</a>
         <a class="navbar-brand brand-logo-mini" href="index.html"
           ><img src="../../image/logo.jpg" class="mr-2" alt="logo"
@@ -301,58 +301,58 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/index.html">
+            <a class="nav-link" href="../../index.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">All courses</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./add.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Add course</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./list.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">list of courses</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="../pearson/add.html">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Add pearsone</span>
+              <span class="menu-title">Add User</span>
             </a>
           </li>
         </ul>
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <form Class="w-75 m-auto py-2"H>
+        <form Class="w-75 m-auto py-2 course-form"H>
           <div Class="form-row">
             <div Class="form-group col-md-6">
-              <label for="inputEmail4">name</label>
+              <label for="nameInput">name</label>
               <input
                 type="text"
                 Class="form-control"
                 placeholder="name"
-              
+               id="nameInput"
               />
             </div>
             <div Class="form-group col-md-6">
-              <label for="inputPassword4">code</label>
+              <label for="codeInput">code</label>
               <input
                 type="text"
                 Class="form-control"
-                
+                 id="codeInput"
                 placeholder="code..."
                 
               />
             </div>
           </div>
           <div Class="form-group">
-            <label for="inputAddress">discription</label>
-            <textarea Class="form-control" placeholder="discription"
+            <label for="descriptionInput">discription</label>
+            <textarea id="descriptionInput" Class="form-control" placeholder="discription"
             
             >
   
@@ -362,12 +362,12 @@
         
           <div Class="form-row">
             <div Class="form-group col-md-6">
-              <label for="inputCity">image</label>
-              <input type="file" Class="form-control"/>
+              <label for="imageInput">image</label>
+              <input id="imageInput" type="file" Class="form-control"/>
             </div>
             <div Class="form-group col-md-4">
-              <label for="inputState">study_level</label>
-              <select id="inputState" Class="form-control"
+              <label for="studyLevelInput">study_level</label>
+              <select id="studyLevelInput" Class="form-control"
                 > 
                 <option>choose...</option>
                 <option>1</option>
@@ -377,8 +377,8 @@
               </select>
             </div>
             <div Class="form-group col-md-2">
-            <label for="inputState">semester</label>
-              <select id="inputState" Class="form-control"
+            <label for="semesterInput">semester</label>
+              <select id="semesterInput" Class="form-control"
             
               >
                 <option>choose...</option>
@@ -389,7 +389,7 @@
             </div>
           </div>
         
-          <button type="submit" Class="btn btn-primary">
+          <button id="submit-course"  Class="btn btn-primary">
             save
           </button>
         </form>
@@ -409,6 +409,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+  <script src="./add.js"></script>
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
