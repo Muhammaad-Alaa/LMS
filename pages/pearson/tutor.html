@@ -7,7 +7,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Content</title>
+    <title>Add Assistant</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../vendors/feather/feather.css" />
     <link
@@ -393,127 +395,108 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="../../index.html">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">All courses</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./add.html">
+              <a class="nav-link" href="../Course pages/add.html">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Add course</span>
               </a>
             </li>
             <!-- <li class="nav-item">
-            <a class="nav-link" href="./list.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">list of courses</span>
-            </a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="../pearson/student.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Add Student</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pearson/doctor.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Add Professor</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pearson/tutor.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Add Assistant</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pearson/employee.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Add Employee</span>
-            </a>
-          </li>
+              <a class="nav-link" href="../Course pages/list.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">list of courses</span>
+              </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="./student.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Student</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./doctor.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Professor</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tutor.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Assistant</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./employee.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Employee</span>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- partial -->
-        <div class="main-panel">
-          <section Class="bg-light py-5 pt-2 py-xl-8">
-            <div class="container">
-              <div class="gy-md-0">
-                <div class="text-md-start">
-                  <div class="text-lg-left text-md-center text-sm-center">
-                    <h3 id="course-name" class="display-3 fw-bolder mb-4 p-3">
-                      courseName
-                    </h3>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-12">
-                      <div id="content-section">
-                        <div class="mb-3">
-                          <button
-                            type="button"
-                            class="btn btn-primary border-0"
-                            id="add-content-btn"
-                          >
-                            Add Content
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-primary border-0"
-                            id="add-assignment-btn"
-                          >
-                            Add Assignment
-                          </button>
-                        </div>
-                        <div id="content-form" style="display: none">
-                          <input
-                            class="form-control mb-2"
-                            type="text"
-                            id="content-name"
-                            placeholder="Content Name"
-                          />
-                          <input
-                            class="form-control mb-2"
-                            type="file"
-                            id="content-file"
-                            multiple
-                          />
-                          <button
-                            type="button"
-                            class="btn btn-success"
-                            id="submit-content-btn"
-                          >
-                            Add
-                          </button>
-                        </div>
-                        <div id="assignment-form" style="display: none">
-                          <input
-                            class="form-control mb-2"
-                            type="file"
-                            id="assignment-file"
-                          />
-                          <button
-                            type="button"
-                            class="btn btn-success"
-                            id="submit-assignment-btn"
-                          >
-                            Add
-                          </button>
-                        </div>
-                        <div id="content-list">
-                          <!-- Content and assignments will be dynamically added here -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--  -->
-                </div>
+        <div class="main-panel mt-3 mx-2 p-4 bg-light">
+          <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="2500" style="background-color: rgb(255, 255, 255);" class="user-form shadow rounded mb-4 p-3">
+    
+            <h1>Add Assistant</h1>
+  
+            <form onsubmit="saveAssistant(event)" id="assistantForm">
+              <div class="my-4">
+                <label for="name">Name:</label>
+              <input class="form-control" type="text" id="name" required>
               </div>
-            </div>
-          </section>
+          
+              <div class="my-4">
+                <label for="code">Code:</label>
+              <input class="form-control" type="text" id="code" required>
+              </div>
+          
+              <div class="my-4">
+                <label for="email">Email:</label>
+              <input class="form-control" type="email" id="email" required>
+              </div>
+              <div class="my-4">
+                <label for="course">Course:</label>
+              <input class="form-control" type="course" id="course" required>
+              </div>
+          
+             <div class="my-4">
+              <label for="studyLevel">Year:</label>
+              <select class="form-control" id="studyLevel" required>
+                <option value="">Select study level</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+             </div>
+          
+              <button class="btn btn-primary border-0 mb-3" type="submit" >Add</button>
+            </form>
+          </div>
+           <div  style="background-color: rgb(255, 255, 255);" class="mt-3 shadow rounded mb-4 p-3">
+            <h3>Assistant List</h3>
+            <table class="table table-striped" id="assistantTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Code</th>
+                  <th>Email</th>
+                  <th>course</th>
+                  <th>Study Level</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="assistantTableBody"></tbody>
+            </table>
+           </div>
+          
           <footer class="footer text-center">
             <div>
               <span class="text-muted d-block">Al Azhar University </span>
@@ -523,14 +506,16 @@
               >
             </div>
           </footer>
-
           <!-- partial -->
-        </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-    <script src="./course.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./tutor.js"></script>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../vendors/js/vendor.bundle.base.js"></script>

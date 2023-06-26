@@ -1,38 +1,49 @@
 // Define an empty array to store the form data
-const formData = [];
-const courseForm = document.querySelector(".course-form")
-// Get a reference to the form element
+let formData = [];
+
+// Check if there is any existing data in the local storage
+const storedData = localStorage.getItem("formData");
+if (storedData) {
+  formData = JSON.parse(storedData); // Parse the JSON string to an array
+}
+
+const courseForm = document.querySelector(".course-form");
 const submitCourse = document.getElementById("submit-course");
+const listCourses = document.querySelector(".list-courses");
 
-// Add an event listener to the form's submit event
 submitCourse.addEventListener("click", function (event) {
-  event.preventDefault(); // Prevent the form from submitting and refreshing the page
-
+  event.preventDefault();
+  
   // Get the input values
   const name = document.getElementById("nameInput").value;
   const code = document.getElementById("codeInput").value;
   const description = document.getElementById("descriptionInput").value;
-  const image = document.getElementById("imageInput").value;
+  const imageFile = document.getElementById("imageInput").files[0]; // Get the file object
   const studyLevel = document.getElementById("studyLevelInput").value;
   const semester = document.getElementById("semesterInput").value;
+  // Create a FileReader object to read the image file
+  const reader = new FileReader();
 
-  // Create an object to store the form data
-  const entry = {
-    name: name,
-    code: code,
-    description: description,
-    image: image,
-    studyLevel: studyLevel,
-    semester: semester,
+  reader.onload = function () {
+    // The image file has been read successfully
+    const image = reader.result; // Get the base64-encoded image data
+    const entry = {
+      name: name,
+      code: code,
+      description: description,
+      image: image,
+      studyLevel: studyLevel,
+      semester: semester,
+    };
+
+    formData.push(entry);
+
+    // Store the updated formData array in the local storage
+    localStorage.setItem("formData", JSON.stringify(formData));
+
+    courseForm.reset();
+
   };
-
-  // Add the entry to the formData array
-  formData.push(entry);
-
-  // Reset the form
-  courseForm.reset();
-
-  // Display the form data (you can modify this part to suit your needs)
-  console.log(formData);
-  
+  // Read the image file as a data URL
+  reader.readAsDataURL(imageFile);
 });

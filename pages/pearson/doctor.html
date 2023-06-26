@@ -7,7 +7,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Edit</title>
+    <title>Add Professor</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../vendors/feather/feather.css" />
     <link
@@ -39,7 +41,7 @@
           <a class="navbar-brand brand-logo mr-5" href="../../index.html"
             >Al_Azher</a
           >
-          <a class="navbar-brand brand-logo-mini" href="index.html"
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"
             ><img src="../../image/logo.jpg" class="mr-2" alt="logo"
           /></a>
         </div>
@@ -404,294 +406,97 @@
                 <span class="menu-title">Add course</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="../Course pages/list.html">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">list of courses</span>
               </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="./student.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Student</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./add.html">
+              <a class="nav-link" href="./doctor.html">
                 <i class="icon-grid menu-icon"></i>
-                <span class="menu-title">Add User</span>
+                <span class="menu-title">Add Professor</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tutor.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Assistant</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./employee.html">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Add Employee</span>
               </a>
             </li>
           </ul>
         </nav>
         <!-- partial -->
-        <div class="main-panel mt-3 mx-2 p-3" style="background-color: #f5f7ff">
-          <div class="user-form">
-            <h4>Add User</h4>
-            <form id="userForm">
-              <label for="userType">Select User:</label>
-              <select
-                class="form-control mb-3"
-                id="userType"
-                onchange="toggleFormFields()"
-              >
-                <option value="all">All</option>
-                <option value="student">Student</option>
-                <option value="professor">Professor</option>
-                <option value="tutor">Tutor</option>
-                <option value="employee">Employee</option>
+        <div class="main-panel mt-3 mx-2 p-4 bg-light">
+          <div data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="2500" style="background-color: rgb(255, 255, 255);" class="user-form shadow rounded mb-4 p-3">
+    
+            <h1>Add Professor</h1>
+  
+            <form onsubmit="saveProfessor(event)" id="professorForm">
+              <div class="my-4">
+                <label for="name">Name:</label>
+              <input class="form-control" type="text" id="name" required>
+              </div>
+          
+              <div class="my-4">
+                <label for="code">Code:</label>
+              <input class="form-control" type="text" id="code" required>
+              </div>
+          
+              <div class="my-4">
+                <label for="email">Email:</label>
+              <input class="form-control" type="email" id="email" required>
+              </div>
+              <div class="my-4">
+                <label for="course">Course:</label>
+              <input class="form-control" type="course" id="course" required>
+              </div>
+          
+             <div class="my-4">
+              <label for="studyLevel">Year:</label>
+              <select class="form-control" id="studyLevel" required>
+                <option value="">Select study level</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select>
-
-              <div id="professorFields" style="display: none">
-                <input
-                  placeholder="Name"
-                  class="form-control mb-3"
-                  type="text"
-                  id="professorName"
-                  required
-                />
-                <input
-                  placeholder="Code"
-                  class="form-control mb-3"
-                  type="text"
-                  id="professorCode"
-                  required
-                />
-                <input
-                  placeholder="Email"
-                  class="form-control mb-3"
-                  type="email"
-                  id="professorEmail"
-                  required
-                />
-                <input
-                  placeholder="Course"
-                  class="form-control mb-3"
-                  type="text"
-                  id="course"
-                  required
-                />
-                <input
-                  placeholder="Year"
-                  class="form-control mb-3"
-                  type="text"
-                  id="year"
-                  required
-                />
-                <input
-                  placeholder="Age"
-                  class="form-control"
-                  type="text"
-                  id="professorAge"
-                  required
-                />
-              </div>
-
-              <div id="studentFields" style="display: none">
-                <input
-                  placeholder="Name"
-                  class="form-control mb-3"
-                  type="text"
-                  id="studentName"
-                  required
-                />
-                <input
-                  placeholder="Code"
-                  class="form-control mb-3"
-                  type="text"
-                  id="studentCode"
-                  required
-                />
-                <input
-                  placeholder="Email"
-                  class="form-control mb-3"
-                  type="email"
-                  id="studentEmail"
-                  required
-                />
-                <input
-                  placeholder="Year"
-                  class="form-control mb-3"
-                  type="text"
-                  id="studentYear"
-                  required
-                />
-                <input
-                  placeholder="Age"
-                  class="form-control"
-                  type="text"
-                  id="studentAge"
-                  required
-                />
-              </div>
-
-              <div id="tutorFields" style="display: none">
-                <input
-                  placeholder="Name"
-                  class="form-control mb-3"
-                  type="text"
-                  id="tutorName"
-                  required
-                />
-                <input
-                  placeholder="Code"
-                  class="form-control mb-3"
-                  type="text"
-                  id="tutorCode"
-                  required
-                />
-                <input
-                  placeholder="Email"
-                  class="form-control mb-3"
-                  type="email"
-                  id="tutorEmail"
-                  required
-                />
-                <input
-                  placeholder="Course"
-                  class="form-control mb-3"
-                  type="text"
-                  id="tutorCourse"
-                  required
-                />
-                <input
-                  placeholder="Year"
-                  class="form-control mb-3"
-                  type="text"
-                  id="tutorYear"
-                  required
-                />
-                <input
-                  placeholder="Age"
-                  class="form-control"
-                  type="text"
-                  id="tutorAge"
-                  required
-                />
-              </div>
-
-              <div id="employeeFields" style="display: none">
-                <input
-                  placeholder="Name"
-                  class="form-control mb-3"
-                  type="text"
-                  id="employeeName"
-                  required
-                />
-                <input
-                  placeholder="Code"
-                  class="form-control mb-3"
-                  type="text"
-                  id="employeeCode"
-                  required
-                />
-                <input
-                  placeholder="Email"
-                  class="form-control mb-3"
-                  type="email"
-                  id="employeeEmail"
-                  required
-                />
-                <input
-                  placeholder="Age"
-                  class="form-control"
-                  type="text"
-                  id="employeeAge"
-                  required
-                />
-              </div>
-
-              <button class="btn btn-info mt-3 mb-5" id="buttonSubmit">
-                Add
-              </button>
+             </div>
+          
+              <button class="btn btn-primary border-0 mb-3" type="submit" >Add</button>
             </form>
           </div>
-
-          <!-- Change input to select for filtering -->
-          <div id="filterDiv">
-            <label for="filterUserType">Filter User Type:</label>
-            <select class="form-control mb-3" id="filterUserType">
-              <option value="all">All</option>
-              <option value="student">Student</option>
-              <option value="professor">Professor</option>
-              <option value="tutor">Tutor</option>
-              <option value="employee">Employee</option>
-            </select>
-          </div>
-
-          <table
-            class="table table-bordered table-striped mt-3 mb-5"
-            id="userData"
-            style="display: none"
-          >
-            <thead>
-              <tr>
-                <th>Rule</th>
-                <th>Name</th>
-                <th>Code</th>
-                <th>Email</th>
-                <th>Course Name</th>
-                <th>Year</th>
-                <th>Age</th>
-                <th>Operations</th>
-              </tr>
-            </thead>
-            <tbody id="userDataBody"></tbody>
-          </table>
-
-          <!-- <section Class="bg-light">
-          <form Class="w-75 m-auto py-2"H>
-            <div Class="form-row">
-              <div Class="form-group col-md-6">
-                <label for="inputEmail4">name</label>
-                <input
-                  type="text"
-                  Class="form-control"
-                  placeholder="name"
-                
-                />
-              </div>
-              <div Class="form-group col-md-6">
-                <label for="inputPassword4">age</label>
-                <input
-                  type="text"
-                  Class="form-control"
-                  
-                  placeholder="age..."
-                  
-                />
-              </div>
-            </div>
-            <div Class="form-group">
-              <label for="inputAddress">SSN</label>
-              <input
-              type="text"
-              Class="form-control"
-              
-              placeholder="age..."
-              
-            />
-    
-              </textarea>
-            
-            </div>
+           <div style="background-color: rgb(255, 255, 255);" class="mt-3 shadow rounded mb-4 p-3">
+            <h3>Professor List</h3>
+            <table class="table table-striped" id="professorTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Code</th>
+                  <th>Email</th>
+                  <th>course</th>
+                  <th>Study Level</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="professorTableBody"></tbody>
+            </table>
+           </div>
           
-            <div Class="form-row">
-              <div Class="form-group col-md-6">
-                <label for="inputCity">email</label>
-                <input type="email" Class="form-control"/>
-              </div>
-              <div Class="form-group col-md-4">
-                <label for="inputState">level</label>
-                <select id="inputState" Class="form-control"
-                  > 
-                  <option>choose...</option>
-                  <option>Employee</option>
-                  <option>professor</option>
-                  <option>Assestans</option>
-                </select>
-              </div>
-            </div>
-          
-            <button type="submit" Class="btn btn-primary">
-              save
-            </button>
-          </form>
-        </section> -->
           <footer class="footer text-center">
             <div>
               <span class="text-muted d-block">Al Azhar University </span>
@@ -702,12 +507,15 @@
             </div>
           </footer>
           <!-- partial -->
-        </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-    <script src="./add.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./doctor.js"></script>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../vendors/js/vendor.bundle.base.js"></script>
